@@ -1,23 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import { Card, CardList } from './components/cards';
+import { projectsList, profileWriteUp } from './info';
+import { Writeup } from './components/writeup';
+import { Navbar } from './components/navbar';
+import { useState } from 'react';
 
 function App() {
-  return (
+	const [filter, setFilter] = useState('')
+	
+	return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+		<Navbar></Navbar>
+		<Writeup writeup={profileWriteUp}></Writeup>
+		<div>
+			<input placeholder='filter' onChange={(event) => {setFilter(event.target.value); console.log(event.target.value)}}></input>
+		</div>
+		<div style={{marginTop: '20px'}}>Below is a list of my projects. Use the input field above to filter for any keywords you may be interested in.</div>
+		<CardList projectsList={projectsList}></CardList>
     </div>
   );
 }
