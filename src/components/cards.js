@@ -1,11 +1,15 @@
+
+
 export const Card = ({project}) => {
 	return (
-		<div className="card-single">
-			<div>Title: {project.title}</div>
-			<div>{project.screenshot}</div>
-			<div>Github: {project.github}</div>
-			<div>Description: {project.description}</div>
-			<div>Technology used: {project.techUsed}</div>
+		<div className="card">
+			<div className="card-content">
+				<div>Title: {project.title}</div>
+				<img src={`/screenshots/${project.screenshot}`} alt={`screenshot of project ${project.projectId}`} className="project-screenshot"></img>
+				<div>URL: <a href={project.url} className="url-link">{project.url}</a></div>
+				<div>Description: {project.description}</div>
+				<div>Technology used: {project.techUsed}</div>
+			</div>
 		</div>
 	)
 }

@@ -2,7 +2,20 @@
   text-align: center;
 }
 
-.App-logo {
+html {
+	background-color:  	#1e2124;
+}
+
+body{
+	min-width:100px;        /* Suppose you want minimum width of 1000px */
+	width: auto !important;  /* Firefox will set width as auto */
+	/* width:1000px;            As IE6 ignores !important it will set width as 1000px; */
+	background-color: #1e2124;
+	color: white;
+	padding: 1% 1%;
+}
+
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -11,7 +24,7 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
+} */
 
 .App-header {
   background-color: #282c34;
@@ -24,38 +37,131 @@
   color: white;
 }
 
+.navbar{
+	color: 'blue';
+	display: flex;
+	border-width: 1px;
+	/* border-color: black; */
+	/* border-radius: 10px; */
+	/* border-style: solid; */
+	margin: 0 5%;
+	background-color: #282b30;
+	box-shadow: 1px 4px 8px 1px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.navbar-item {
+	padding: 10px;
+  /*   border-width: 1px;
+	border-color: #7289da;
+	border-style: dotted; */
+	min-width: 10%;
+	color: black;
+	display: flex;
+	justify-items: center;
+  }
+  
+  .navbar-item-link{
+	text-decoration: none;
+	color: black;
+	background-color: #7289da;
+  }
+  
+  .navbar-item-link .navbar-item:hover{
+	background-color: #282b30;
+	color: white;
+	text-decoration: none;
+  }
+  
+  .filter-container{
+	display: flex;
+	justify-content: center;
+  }
+  
+  .filter {
+	/* margin-top: 50px; */
+	background-color: white;
+	border: none;
+	padding: 5px;
+  /*   margin-top: 10px;
+	margin-left: 10px; */
+	margin: 20px;
+  }
+  
+  .write-up {
+	display:flex;
+	justify-content: center;
+	margin: auto;
+	color: white;
+	max-width: 500px;
+	padding: 30px;
+  }
+
+
 .App-link {
   color: #61dafb;
 }
 
 .writeup {
 	padding: 20px;
-}
-
-.card-single {
-	display:flex;
-	flex-direction: column;
-	width: 25%;
-	border-radius: 5px;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	padding-left: 30px;
-	padding-right: 30px;
-	margin-top: 15px;
-
+	color: white;
 }
 
 .card-list {
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-around;
 	width: 90%;
 	flex-wrap: wrap;
 	margin: auto;
 }
 
+.card {
+	display:flex;
+	flex-direction: column;
+	width: 30%;
+	border-radius: 5px;
+	padding: 8px;
+	/* margin-top: 15px;
+	margin-left: 10px; */
+	margin: 15px 10px;
+	background-color:#7289da;
+	color: black
+}
+
+.card-content {
+	display:flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	background-color: #424549;
+	border-radius: 5px;
+	color: white;
+	padding: 10px 10px 10px 10px;
+	text-align: left;
+  }
+
+  .card-content > div {
+	margin: 3px 0px;
+  }
+
+  .project-screenshot {
+	max-width: 100%;
+	/* max-height: 45%; */
+	display:flex;
+	align-self: center;
+	/* width: 90%; */
+	height:auto;
+	margin: 5% 0px;
+  }
+
+  .url-link {
+	text-decoration: underline;
+	color: white;
+  }
+
+
 @media (max-width: 1200px) {
-	.card-single {
-		width: 40%;
+	.card{
+		width: 42%;
 	}
 }
 
@@ -66,7 +172,7 @@
 	.card-list {
 		width: 95%;
 	}
-	.card-single {
+	.card{
 		width: 100%;
 	}
 }
