@@ -4,7 +4,7 @@ import { Card, CardList } from './components/cards';
 import { projectsList, profileWriteUp } from './info';
 import { Writeup } from './components/writeup';
 import { Navbar } from './components/navbar';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
 	const [filter, setFilter] = useState('')
@@ -16,6 +16,9 @@ function App() {
 			return false
 		}
 	}
+
+	useEffect(() => {document.title = `Joon Sunn's Portfolio Page`})
+
 	return (
     <div className="App">
 		<Navbar></Navbar>
@@ -23,7 +26,7 @@ function App() {
 		<div>
 			<input placeholder='filter' onChange={(event) => {setFilter(event.target.value); console.log(event.target.value)}}></input>
 		</div>
-		<div style={{marginTop: '20px', color: 'white'}}>Below is a list of my projects. Use the input field above to filter for any keywords you may be interested in.</div>
+		<div style={{marginTop: '20px', color: 'white'}}>Below is a list of my projects. Use the input field above to filter for any keyword you may be interested in.</div>
 		<CardList projectsList={projectsList.filter(listItem => projectStringsFilter(listItem, filter))}></CardList>
     </div>
   );
